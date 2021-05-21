@@ -10,11 +10,33 @@ void Main()
     // Let the moose speak!
     MooseSays("I really am enthusiastic");
 
-    // As a question
-    CanadaQuestion();
-    EnthusiasticQuestion();
-    LoveCSharpQuestion();
-    SecretQuestion();
+    string[] questions = { "Are meese real", "Are you enthusiastic?", "Do you love C# yet?", "Do you want to know a secret?" };
+    string[] trueAnswers = { "Really? It seems very unlikely.", "Yay!", "Good job sucking up to your instructor!", "ME TOO!!!! I love secrets...tell me one!" };
+    string[] falseAnswers = { "I  K N E W  I T !!!", "You should try it!", "You will...oh, yes, you will...", "Oh, no...secrets are the best, I love to share them!" };
+    for (int i = 0; i < 4; i++)
+
+    //! I need to map the array of True and False answers, as well as the questions into the foreach statement 
+
+    //? single function call, that will do all that, called in the loop
+
+    //* call a function question, get the text data in to new function
+
+
+    {
+        bool isTrue = MooseAsks(questions[i]);
+        if (isTrue)
+        {
+            //MooseSays("Really? It seems very unlikely.");
+            MooseSays(trueAnswers[i]);
+
+        }
+        else
+        {
+            //MooseSays("I  K N E W  I T !!!");
+            MooseSays(falseAnswers[i]);
+        }
+    }
+
 }
 
 bool MooseAsks(string question)
@@ -38,57 +60,6 @@ bool MooseAsks(string question)
     }
 }
 
-void CanadaQuestion()
-{
-    bool isTrue = MooseAsks("Is Canada real?");
-    if (isTrue)
-    {
-        MooseSays("Really? It seems very unlikely.");
-    }
-    else
-    {
-        MooseSays("I  K N E W  I T !!!");
-    }
-}
-
-void EnthusiasticQuestion()
-{
-    bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
-    if (isEnthusiastic)
-    {
-        MooseSays("Yay!");
-    }
-    else
-    {
-        MooseSays("You should try it!");
-    }
-}
-
-void LoveCSharpQuestion()
-{
-    bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
-    if (doesLoveCSharp)
-    {
-        MooseSays("Good job sucking up to your instructor!");
-    }
-    else
-    {
-        MooseSays("You will...oh, yes, you will...");
-    }
-}
-
-void SecretQuestion()
-{
-    bool wantsSecret = MooseAsks("Do you want to know a secret?");
-    if (wantsSecret)
-    {
-        MooseSays("ME TOO!!!! I love secrets...tell me one!");
-    }
-    else
-    {
-        MooseSays("Oh, no...secrets are the best, I love to share them!");
-    }
-}
 
 void MooseSays(string message)
 {
